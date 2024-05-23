@@ -6,10 +6,10 @@ const curtoBt = document.querySelector('.app__card-button--curto');
 const longoBt = document.querySelector('.app__card-button--longo');
 const botoes = document.querySelectorAll('.app__card-button');
 const musicaFocoInput = document.getElementById('alternar-musica');
-const musica = new Audio('/sons/luna-rise-part-one.mp3');
-const audioIniciou = new Audio('/sons/play.wav');
-const audioPausa = new Audio('/sons/pause.mp3');
-const audioTempoFinalizou = new Audio('/sons/beep.mp3');
+const musica = new Audio('./sons/luna-rise-part-one.mp3');
+const audioIniciou = new Audio('./sons/play.wav');
+const audioPausa = new Audio('./sons/pause.mp3');
+const audioTempoFinalizou = new Audio('./sons/beep.mp3');
 const startPauseBt = document.getElementById('start-pause');
 const iconePlayer = document.querySelector('.app__card-primary-butto-icon');
 const iniciarOuPausarBt = document.querySelector('span');
@@ -54,7 +54,7 @@ function alterarContexto(contexto) {
         contexto.classList.remove('active');
     })
     html.setAttribute('data-contexto', contexto);
-    banner.setAttribute('src', `/imagens/${contexto}.png`);
+    banner.setAttribute('src', `./imagens/${contexto}.png`);
     switch (contexto) {
         case "foco":
             tituloPag.innerHTML = 'Otimize sua produtividade,<br><strong class="app__title-strong">mergulhe no que importa.</strong>';
@@ -100,14 +100,14 @@ function iniciarOuPausar() {
     }
     audioIniciou.play();
     intervaloId = setInterval(contagemRegressiva, 1000);
-    iconePlayer.setAttribute('src', '/imagens/pause.png');
+    iconePlayer.setAttribute('src', './imagens/pause.png');
     iniciarOuPausarBt.textContent = "Pausar";
 }
 
 function zerar() {
     clearInterval(intervaloId);
     intervaloId = null;
-    iconePlayer.setAttribute('src', '/imagens/play_arrow.png');
+    iconePlayer.setAttribute('src', './imagens/play_arrow.png');
     iniciarOuPausarBt.textContent = "Começar";
 }
 
